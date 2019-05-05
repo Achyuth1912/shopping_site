@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.css';
 import Navbar from './components/Navbar';
-import ItemsList from './components/ItemList';
+import ItemsList from './components/ItemsList';
 import Cart from './components/Cart';
 import Axios from 'axios';
 
@@ -25,10 +25,10 @@ class App extends Component {
   }
 
   renderContent = () => {
-    const { activeTab } = this.state;
+    const { activeTab, items } = this.state;
     switch (activeTab) {
       default:
-      case 0: return <ItemsList />;
+      case 0: return <ItemsList items={items}/>;
       case 1: return <Cart />
     }
   }
