@@ -14,6 +14,6 @@
     padding-bottom: 5px;
 }
 
-.navbar-list-item {
+.navbar-item-active {
     border-bottom: 4px solid #ffeb3b;
 }
