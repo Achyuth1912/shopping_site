@@ -1,15 +1,24 @@
 import React from 'react';
-import styles from './style.css';
+import style from './style.css';
 
-const Navbar = () => {
+const Navbar = props => {
+    const {
+        activeTab,
+        onTabChange
+    } = props;
+
     return (
-        <nav className={styles.navbarContainer}>
-            <ul className={styles.navbarList}>
-                <li className={styles.navbarListItem}>Items</li>
-                <li className={styles.navbarListItem}>Cart</li>
+        <nav className={style.navbarContainer}>
+            <ul className={style.navbarList}>
+                <li className={`${style.navbarListItem} ${activeTab == 0 ? style.navbarItemActive : ""}`}>
+                    <a onClick={()=>onTabChange(0)}>Items</a>
+                </li>
+                <li className={`${style.navbarListItem} ${activeTab == 1 ? style.navbarItemActive : ""}`}>
+                    <a onClick={()=>onTabChange(1)}>Cart</a>
+                </li>
             </ul>
         </nav>
     );
 }
 
-export default Navbar
+export default Navbar;
